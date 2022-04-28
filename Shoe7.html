@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roam Surf Toddler Mid</title>
+	<link rel = "icon" href ="LOGO/logo Gradient.png" type = "jpeg/png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="Shoe.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="Shoe.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function(){
+            $('#descriptionTab').tabs();    
+        });
+    </script>
+</head>
+<body>
+	<header>
+        <span>
+            <a href="SearchShoes.html"><img src="LOGO/back.png"></a>
+        </span>
+         <!--<nav>
+            <img src="LOGO/logo Gradient.png" alt="" srcset="">
+            <h1>Clarks</h1>
+        </nav>-->
+    </header>
+    <div id="content">
+		<div class="column">
+			<img id="firstImg" src="images/shoe7_0_Large.jpg" >
+			<div id="slide">
+				<img id="slideLeft" class="arrow"  src="">
+				<div id="slider">
+					<img class="thumbnailShoes activeImage" src="images/shoe7_0_Large.jpg" >
+					<img class="thumbnailShoes" src="images/shoe7_1_Large.jpg" >
+					<img class="thumbnailShoes" src="images/shoe7_2_Large.jpg">
+					<img class="thumbnailShoes" src="images/shoe7_3_Large.jpg" >
+					<img class="thumbnailShoes" src="images/shoe7_4_Large.jpg">
+					<img class="thumbnailShoes" src="images/shoe7_5_Large.jpg" >
+					<img class="thumbnailShoes" src="images/shoe7_6_Large.jpg" >
+				</div>
+				<img id="slideRight" class="arrow"  src="">
+			</div>
+            <!-- <img id="firstImg" src="../images/shoe7_0_Large.jpg" > -->
+		</div> 
+
+		<div class="column1">
+
+			<!-- shoe details -->
+			<h1>Roam Surf Toddler Mid</h1>
+			<h3>Kids&nbsp;|&nbsp;Sandals</h3>
+			<hr>
+			<h4> £ 36.00</h4>
+			<h5>Color &nbsp; Blue Leather </h5>
+			<!-- add remove buttons -->
+			<p id="shoe7">
+				<button class="addFav">Add</button>
+				<button class="rem">Remove</button>
+			</p>
+
+			<!--Showing the Sizes of shoes available in seperate boxes-->
+			<div class="box-selectors" data-selection="Size">
+				<fieldset>
+					<legend class="visuallyhidden">SELECT SIZE:</legend>
+					<div class="box-selectors__wrapper">
+						<label>
+								<input type="radio" name="size-selected" class="box-elements js-choose-item clickLink available" data-code-value="SIZE_8040" data-type="size" data-prompt-value="4" aria-pressed="false" value="">
+								<span id="SIZE_8040-label" tabindex="-1">4</span>
+						</label>
+						<label>
+								<input type="radio" name="size-selected" class="box-elements js-choose-item clickLink available" data-code-value="SIZE_8045" data-type="size" data-prompt-value="4½" aria-pressed="false" value="">
+								<span id="SIZE_8045-label" tabindex="-1">4½</span>
+						</label>
+						<label>
+								<input type="radio" name="size-selected" class="box-elements js-choose-item clickLink available" data-code-value="SIZE_8050" data-type="size" data-prompt-value="5" aria-pressed="false" value="">
+								<span id="SIZE_8050-label" tabindex="-1">5</span>
+						</label>
+						<label>
+								<input type="radio" name="size-selected" class="box-elements js-choose-item clickLink available" data-code-value="SIZE_8055" data-type="size" data-prompt-value="5½" aria-pressed="false" value="">
+								<span id="SIZE_8055-label" tabindex="-1">5½</span>
+						</label>
+						<label>
+								<input type="radio" name="size-selected" class="box-elements js-choose-item clickLink available" data-code-value="SIZE_8060" data-type="size" data-prompt-value="6" aria-pressed="false" value="">
+								<span id="SIZE_8060-label" tabindex="-1">6</span>
+						</label>
+						<label>
+								<input type="radio" name="size-selected" class="box-elements js-choose-item clickLink available" data-code-value="SIZE_8065" data-type="size" data-prompt-value="6½" aria-pressed="false" value="">
+								<span id="SIZE_8065-label" tabindex="-1">6½</span>
+						</label>
+						<label>
+								<input type="radio" name="size-selected" class="box-elements js-choose-item clickLink available" data-code-value="SIZE_8070" data-type="size" data-prompt-value="7" aria-pressed="false" value="">
+								<span id="SIZE_8070-label" tabindex="-1">7</span>
+						</label>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		let thumbnailShoes = document.getElementsByClassName('thumbnailShoes')
+
+		let activeImage = document.getElementsByClassName('activeImage')
+
+		for(var i=0; i < thumbnailShoes.length; i++){
+			thumbnailShoes[i].addEventListener('click' , function(){
+				console.log(activeImage)
+
+				if(activeImage.length > 0){
+					activeImage[0].classList.remove('activeImage')
+				}
+
+				this.classList.add('activeImage')
+				document.getElementById('firstImg').src = this.src
+			})
+		}
+
+		let buttonRigth = document.getElementById('slideRight');
+		let buttonLeft = document.getElementById('slideLeft');
+
+		buttonLeft.addEventListener('click' , function(){
+			document.getElementById('slider').scrollLeft -= 180
+		})
+
+		buttonRigth.addEventListener('click' , function(){
+			document.getElementById('slider').scrollLeft += 180
+		})
+
+	</script>
+
+	<!--Tabs for Description, Size Guide, Return and Delivary-->
+	<div class="descriptionContainer">
+		<div class="descriptionWrap">
+			<div id="descriptionTab">
+				<ul style="padding-left: 0;">
+                    <li><a href="#tab-1" class="linkBtn"><button>Description</button></a></li>
+                    <li><a href="#tab-2" class="linkBtn"><button>Size Guide</button></a></li>
+                    <li><a href="#tab-3" class="linkBtn"><button>Return and Delivery</button></a></li>
+                </ul>
+				<div id="tab-1" class="tabs">
+					<div class="features">
+						<p>
+							A great looking sandal in soft mid blue leather, 
+							Roam Surf has double adjustable straps and padded collar 
+							for comfort in everyday summer adventures. Celebrating a 
+							more conscious choice, its leather linings are chrome-free 
+							to reduce chemical and water use when its made, and the grippy rubber sole and 
+							cushioned Eco Foam footbed feature recycled content.
+						</p>
+					</div>
+				</div>
+				<div id="tab-2" class="tabs">
+					<table id="sizeChart">
+						<tr>
+							<th colspan="3">Kids Clarks Shoe Size</th>
+						</tr>
+						<tr>
+							<td>Clarks UK Size</td>
+							<td>Clarks EU Size</td>
+							<td>Foot Length (Millimetres)</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>20</td>
+							<td>117</td>
+						</tr>
+						<tr>
+							<td>4½</td>
+							<td>20½</td>
+							<td>122</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>21</td>
+							<td>126</td>
+						</tr>
+						<tr>
+							<td>5½</td>
+							<td>22</td>
+							<td>130</td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<td>22½</td>
+							<td>134</td>
+						</tr>
+						<tr>
+							<td>6½</td>
+							<td>23</td>
+							<td>138</td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<td>24</td>
+							<td>142</td>
+						</tr>
+
+					</table>
+				</div>
+				<div id="tab-3" class="tabs">
+					<table class="return">
+                        <tr>
+                            <th colspan='2'>Return and Delivery</th>
+                        </tr>
+                        <tr>
+                            <td class="fee">£ 6.95</td>
+                            <td class="desFee">DPD Next Day Delivery (Order before 7pm)</td>
+                        </tr>
+                        <tr>
+                            <td class="fee">FREE</td>
+                            <td class="desFee">Collect from store (Within 4 working days) </td>
+                        </tr>
+                        <tr>
+                            <td class="fee">FREE</td>
+                            <td class="desFee">Standard Delivery (Within 4 working days) </td>
+                        </tr>
+                        <tr>
+                            <td class="fee">FREE</td>
+                            <td class="desFee">Collect Plus (Within 5 working days) </td>
+                        </tr>
+                        <tr>
+                            <td class="fee">£5.95 </td>
+                            <td class="desFee">Hermes Express Delivery (Within 2 working days) </td>
+                        </tr>
+                        <tr>
+                            <td class="fee">FREE</td>
+                            <td class="desFee">Returns on all items</td>
+                        </tr>
+                    </table>
+                    <div class="returnPayment">
+                        <h1>Returns are free</h1>
+                        <p><strong>within 28 days </strong>(14 days for sale items) to a Clarks store, </p>
+                        <p>via CollectPlus or via the Post Office.</p>
+                        <p>Online orders paid for using Klarna need to be returned to our distribution centre where you will be refunded to your original form of payment.</p>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
